@@ -42,15 +42,27 @@
     form {
       margin-top: 1.5rem;
     }
+    .g-recaptcha {
+      margin-top: 1rem;
+      display: inline-block;
+    }
   </style>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <h1>🔥 Time on Fire</h1>
   <p>Our fitness timer app is almost ready.</p>
-    <p>Sign up to be notified when we launch!</p>
-  
+  <p>Sign up to be notified when we launch!</p>
+
   <form action="https://formspree.io/f/mjkwqrpy" method="POST">
     <input type="email" name="email" placeholder="Enter your email" required />
+    
+    <!-- Honeypot anti-bot field (invisible to users) -->
+    <input type="text" name="_gotcha" style="display:none" />
+    
+    <!-- Google reCAPTCHA widget -->
+    <div class="g-recaptcha" data-sitekey="6LedxkgrAAAAACwHZIT14Or8zm8Npo3fvfdnQyOZ"></div>
+    
     <button type="submit">Notify me</button>
   </form>
 </body>
